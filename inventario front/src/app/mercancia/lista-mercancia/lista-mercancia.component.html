@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table container">
     <thead>
       <tr>
         <th scope="col">id</th>
@@ -6,6 +6,7 @@
         <th scope="col">Cantidad</th>
         <th scope="col">Fecha ingreso</th>
         <th scope="col">Usuario</th>
+        <th scope="col">Opciones</th>
       </tr>
     </thead>
     <tbody>
@@ -15,7 +16,7 @@
             <td>{{mercancia.cantidad}}</td>
             <td>{{mercancia.fechaIngreso | date:'longDate'}}</td>
             <td>{{mercancia.usuario.id}} - {{mercancia.usuario.nombre}}</td>
-           
+            <td ><i class="fas fa-trash-alt text-danger" (click)="eliminarMercancia(mercancia.id)"></i></td>  
         </tr>
     </tbody>
   </table>

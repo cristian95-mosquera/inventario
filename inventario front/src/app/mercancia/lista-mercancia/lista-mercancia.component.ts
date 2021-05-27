@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Mercancia } from 'src/app/models/mercancia';
 import { MercanciaService } from 'src/app/service/mercancia.service';
 
@@ -11,11 +12,10 @@ export class ListaMercanciaComponent implements OnInit {
 
   mercancia: Mercancia[] = [];
 
-  constructor(private mercanciaService: MercanciaService) { }
+  constructor(private mercanciaService: MercanciaService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.cargarLista();
-    
   }
 
   cargarLista(): void{
@@ -27,6 +27,18 @@ export class ListaMercanciaComponent implements OnInit {
         console.log(err);
       }
     ) 
+  }
+
+  eliminarMercancia(id:number): void{
+    this.mercanciaService.eliminar(id).subscribe(
+      () => {
+        this.toastr.success('Mercancia eliminada', 'información');
+        this.cargarLista();
+      },
+      err => {
+        this.toastr.error(err.error?.mensaje,'Error');
+      }
+    )
   }
 
 

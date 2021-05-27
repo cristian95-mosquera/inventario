@@ -20,7 +20,7 @@ import { ListaUsuarioComponent } from './usuario/lista-usuario/lista-usuario.com
 import { ListaCargoComponent } from './cargo/lista-cargo/lista-cargo.component';
 import { GuardarCargoComponent } from './cargo/guardar-cargo/guardar-cargo.component';
 import { GuardarUsuarioComponent } from './usuario/guardar-usuario/guardar-usuario.component';
-import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-usuario.component';
+
 
 
 @NgModule({
@@ -32,8 +32,7 @@ import { EliminarUsuarioComponent } from './usuario/eliminar-usuario/eliminar-us
     ListaUsuarioComponent,
     ListaCargoComponent,
     GuardarCargoComponent,
-    GuardarUsuarioComponent,
-    EliminarUsuarioComponent,
+    GuardarUsuarioComponent
    
   ],
   imports: [

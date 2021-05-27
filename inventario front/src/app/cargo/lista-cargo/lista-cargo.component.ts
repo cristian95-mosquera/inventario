@@ -31,7 +31,7 @@ export class ListaCargoComponent implements OnInit {
   eliminarCargo(id:number): void{
     this.cargoService.eliminarCargo(id).subscribe(
       () => {
-        this.toastr.success('información', 'Cargo eliminado');
+        this.toastr.success('Cargo eliminado', 'información');
         this.listarCargos();
       },
       err => {

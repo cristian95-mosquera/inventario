@@ -4,13 +4,13 @@ export class Usuario {
     id?: number;
     nombre: string;
     edad: number;
-    fechaIngresoCompania: Date;
+    fechaIngresoCompaia: Date;
     cargo: Cargo;
 
-    constructor(nombre: string, edad: number, fechaIngresoCompania: Date, cargo: Cargo){
+    constructor(nombre: string, edad: number, fechaIngresoCompaia: Date, cargo: Cargo){
         this.nombre = nombre;
         this.edad = edad;
-        this.fechaIngresoCompania = fechaIngresoCompania;
+        this.fechaIngresoCompaia = fechaIngresoCompaia;
         this.cargo = cargo;
     }
 

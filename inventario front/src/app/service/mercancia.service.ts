@@ -22,10 +22,10 @@ export class MercanciaService {
   } 
 
   public editar(id: number, mercancia: Mercancia): Observable<any>{
-    return this.httpClient.put<any>(this.MercanciaURL + {id}, mercancia);
+    return this.httpClient.put<any>(this.MercanciaURL + id, mercancia);
   } 
 
   public eliminar(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.MercanciaURL + {id});
+    return this.httpClient.delete<any>(this.MercanciaURL + '/'+ id);
   }
 }

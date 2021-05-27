@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table container">
     <thead>
       <tr>
         <th scope="col">id</th>
@@ -6,6 +6,7 @@
         <th scope="col">Edad</th>
         <th scope="col">Fecha ingreso compañia</th>
         <th scope="col">Cargo</th>
+        <th scope="col">Opciones</th>
       </tr>
     </thead>
     <tbody>
@@ -13,8 +14,9 @@
             <th scope="row">{{usuario.id}}</th>
             <td>{{usuario.nombre}}</td>
             <td>{{usuario.edad}}</td>
-            <td>{{usuario.fechaIngresoCompania | date:'longDate'}}</td>
+            <td>{{usuario.fechaIngresoCompaia | date:'longDate'}}</td>
             <td>{{usuario.cargo.id}} - {{usuario.cargo.nombre}}</td>
+            <td ><i class="fas fa-trash-alt text-danger" (click)="eliminarUsuario(usuario.id)"></i></td>
            
         </tr>
     </tbody>

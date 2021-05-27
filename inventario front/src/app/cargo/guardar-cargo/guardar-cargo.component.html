@@ -1,5 +1,6 @@
-<form [formGroup]="formularioCargo" (ngSubmit)="guardarCargo()" #f="ngForm">
-    <div class="container-fluid">
+<form  [formGroup]="formularioCargo" (ngSubmit)="guardarCargo()" #f="ngForm">
+    <div class="table container">
+      <br/>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Nombre cargo</label>
             <input type="text" class="form-control" id="nombre" placeholder="ej: nombre cargo" formControlName="nombre">

@@ -1,17 +1,21 @@
-<form class="row g-3" > 
-    <div class="col-12">
+<form class="table container" [formGroup]="formularioMercancia" (ngSubmit)="guardarMercancia()" #f="ngForm" > 
+    <br/>
+  <div class="col-12">
       <label for="inputAddress" class="form-label">Nombre Producto</label>
-      <input type="text" class="form-control" id="nombreProducto" placeholder="1234 Main St" formControlName="nombreProducto">
+      <input type="text" class="form-control" id="nombreProducto" placeholder="ej: bobina" formControlName="nombreProducto">
     </div>
+    <br/>
     <div class="col-12">
       <label for="inputAddress2" class="form-label">Cantidad</label>
-      <input type="text" class="form-control" id="cantidad" placeholder="Apartment, studio, or floor" formControlName="cantidad">
+      <input type="text" class="form-control" id="cantidad" placeholder="debe sern un numero entero" formControlName="cantidad">
     </div>
+    <br/>
     <div class="col-md-6">
       <label for="inputCity" class="form-label">Fecha ingreso</label>
       <input type="date" class="form-control" id="fechaIngreso" formControlName="fechaIngreso">
     </div>
-    <div class="col-md-4 input-consult">
+    <br/>
+    <div class="col-12">
         <label for="agenteRerporteCostos">Usuario</label>
         <select formControlName="usuario" id="usuario" class="form-control">
             <option disabled selected value="">Seleccione</option>
@@ -20,7 +24,7 @@
             </option>
         </select>
       </div>
-    
+      <br/>    
     <div class="col-12">
       <button type="submit" class="btn btn-primary">Save</button>
     </div>

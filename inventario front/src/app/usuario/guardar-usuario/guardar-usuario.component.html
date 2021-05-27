@@ -1,22 +1,35 @@
-<form>
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Edad</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Fecha ingreso compañia</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">cargo</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-      </div>
+<form  [formGroup]="formularioUsuario" (ngSubmit)="guardarUsuario()" #f="ngForm">
+  <div class="table container">
+    <br/>
       <div class="col-12">
-        <button type="submit" class="btn btn-primary">Save</button>
-      </div>
-
+          <label for="inputAddress" class="form-label">Nombre Usuario</label>
+          <input type="text" class="form-control" id="nombre" placeholder="ej: nombre cargo" formControlName="nombre">
+          <small *ngIf="formularioUsuario.errors?.nombre"> Nombre requerido</small>
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Edad</label>
+          <input type="text" class="form-control" id="edad" placeholder="ej: nombre cargo" formControlName="edad">
+          <small *ngIf="formularioUsuario.errors?.edad"> Edad requerido</small>
+        </div>
+        <div class="col-md-6">
+          <label for="inputAddress" class="form-label">fecha ingreso compañia</label>
+          <input type="date" class="form-control" id="fechaIngresoCompaia" placeholder="ej: nombre cargo" formControlName="fechaIngresoCompaia">
+          <small *ngIf="formularioUsuario.errors?.fechaIngresoCompaia"> Fecha requerido</small>
+        </div>
+        <div class="col-12">
+          <label for="agenteRerporteCostos">Cargo</label>
+          <select formControlName="idCargo" id="cargo" class="form-control">
+              <option disabled selected value="">Seleccione</option>
+              <option *ngFor="let cargo of cargos" [value]="cargo.id">
+                  {{ cargo.nombre }}
+              </option>
+          </select>
+          <small *ngIf="formularioUsuario.errors?.idCargo"> Cargo requerido</small>
+        </div>
+        
+        <br/>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+  </div>    
 </form>

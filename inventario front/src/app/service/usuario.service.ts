@@ -22,11 +22,11 @@ export class UsuarioService {
   } 
 
   public actualizarUsuario(id: number, usuario: Usuario): Observable<any>{
-    return this.httpClient.put<any>(this.UsuarioURL + {id}, usuario);
+    return this.httpClient.put<any>(this.UsuarioURL + id, usuario);
   } 
 
   public eliminarUsuario(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.UsuarioURL + {id});
+    return this.httpClient.delete<any>(this.UsuarioURL + '/'+ id);
   }
 
 }

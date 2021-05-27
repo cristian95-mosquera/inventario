@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { Usuario } from 'src/app/models/usuario';
+import { MercanciaService } from 'src/app/service/mercancia.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
@@ -11,17 +13,37 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 export class NuevoMercanciaComponent implements OnInit {
 
   usuarios: Usuario[] = [];
+  
+  formularioMercancia: FormGroup;
 
-  constructor(private usuarioService: UsuarioService, private formBuilder: FormBuilder) { }
+  constructor(private mercanciaService: MercanciaService ,private usuarioService: UsuarioService, private formBuilder: FormBuilder, private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.cargarUsuario();
+    this.formularioMercancia = this.formBuilder.group({
+      nombreProducto: ['', Validators.required],
+      cantidad: ['', Validators.required],
+      fechaIngreso: ['', Validators.required],
+      usuario: ['', Validators.required],
+    });
+    this.listarUsuario();
   }
 
-  cargarUsuario(){
+  listarUsuario(){
     this.usuarioService.listarUsuario().subscribe((listarUsuario) => this.usuarios = listarUsuario);
   }
-  
+
+  guardarMercancia() {
+    if(this.formularioMercancia.valid){
+      this.mercanciaService.guardarMercancia(this.formularioMercancia.value).subscribe(
+       ( )=> {
+        this.toastr.success('información', 'Mercancia creada con exitosamente');
+       },
+       (error:any)=> {
+        this.toastr.error(error.error?.mensaje,'Error'); 
+       }
+      )
+    }
+  }
   
 
 }

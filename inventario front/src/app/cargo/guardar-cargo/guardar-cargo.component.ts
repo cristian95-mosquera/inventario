@@ -16,7 +16,7 @@ export class GuardarCargoComponent implements OnInit {
 
   formularioCargo: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private cargoService: CargoService,private toastr: ToastrService) {  
+  constructor(private formBuilder: FormBuilder, private cargoService: CargoService, private toastr: ToastrService) {  
   }
 
   ngOnInit(): void {
@@ -33,7 +33,7 @@ export class GuardarCargoComponent implements OnInit {
         this.toastr.success('información', 'El cargo se creo exitosamente');
        },
        (error:any)=> {
-        this.toastr.error('información', error?.mensaje); 
+        this.toastr.error('Error', error?.mensaje); 
        }
       )
     }
