@@ -1,0 +1,18 @@
+{
+    "/mercancia/*": {
+        "target": "http://localhost:8888",
+        "secure": false,
+        "changeOrigin": false
+    },
+    "/usuario/*": {
+        "target": "http://localhost:8888",
+        "secure": false,
+        "changeOrigin": false
+    },
+    "/cargo/*": {
+        "target": "http://localhost:8888",
+        "secure": false,
+        "changeOrigin": false
+    }
+
+}

@@ -1,0 +1,27 @@
+<form class="row g-3" > 
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Nombre Producto</label>
+      <input type="text" class="form-control" id="nombreProducto" placeholder="1234 Main St" formControlName="nombreProducto">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Cantidad</label>
+      <input type="text" class="form-control" id="cantidad" placeholder="Apartment, studio, or floor" formControlName="cantidad">
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">Fecha ingreso</label>
+      <input type="date" class="form-control" id="fechaIngreso" formControlName="fechaIngreso">
+    </div>
+    <div class="col-md-4 input-consult">
+        <label for="agenteRerporteCostos">Usuario</label>
+        <select formControlName="usuario" id="usuario" class="form-control">
+            <option disabled selected value="">Seleccione</option>
+            <option *ngFor="let usuario of usuarios" [value]="usuario.id">
+                {{ usuario.nombre }}
+            </option>
+        </select>
+      </div>
+    
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>

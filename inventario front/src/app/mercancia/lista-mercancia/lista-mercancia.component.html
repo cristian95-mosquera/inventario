@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nombre producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Fecha ingreso</th>
+        <th scope="col">Usuario</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let mercancia of mercancia;">
+            <th scope="row">{{mercancia.id}}</th>
+            <td>{{mercancia.nombreProducto}}</td>
+            <td>{{mercancia.cantidad}}</td>
+            <td>{{mercancia.fechaIngreso | date:'longDate'}}</td>
+            <td>{{mercancia.usuario.id}} - {{mercancia.usuario.nombre}}</td>
+           
+        </tr>
+    </tbody>
+  </table>
+
+

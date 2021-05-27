@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nombre </th>
+        <th scope="col">Edad</th>
+        <th scope="col">Fecha ingreso compañia</th>
+        <th scope="col">Cargo</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of usuarios;">
+            <th scope="row">{{usuario.id}}</th>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.edad}}</td>
+            <td>{{usuario.fechaIngresoCompania | date:'longDate'}}</td>
+            <td>{{usuario.cargo.id}} - {{usuario.cargo.nombre}}</td>
+           
+        </tr>
+    </tbody>
+  </table>

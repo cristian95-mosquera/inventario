@@ -1,0 +1,17 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nombre cargo</th>
+        <th scope="col">Opciones</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cargo of cargos;">
+            <th scope="row">{{cargo.id}}</th>
+            <td>{{cargo.nombre}}</td>
+            <td ><i class="fas fa-trash-alt text-danger" (click)="eliminarCargo(cargo.id)"></i></td>
+        </tr>
+    </tbody>
+  </table>
