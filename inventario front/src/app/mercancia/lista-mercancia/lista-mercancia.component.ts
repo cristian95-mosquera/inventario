@@ -8,14 +8,18 @@ import { MercanciaService } from 'src/app/service/mercancia.service';
   templateUrl: './lista-mercancia.component.html',
   styleUrls: ['./lista-mercancia.component.css']
 })
+
 export class ListaMercanciaComponent implements OnInit {
 
   mercancia: Mercancia[] = [];
+  buscarTexto: string;
+
 
   constructor(private mercanciaService: MercanciaService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.cargarLista();
+  
   }
 
   cargarLista(): void{
@@ -41,5 +45,19 @@ export class ListaMercanciaComponent implements OnInit {
     )
   }
 
+  buscarPalabra(buscarTexto:string): void{
+    this.mercanciaService.consultarPorNombre(buscarTexto).subscribe(
+      data => {
+        this.toastr.success(buscarTexto, 'información');
+      },
+      err => {
+        this.toastr.error(err.error?.mensaje,'Error');
+      }
 
+    )
+  }
+
+  
 }
+
+

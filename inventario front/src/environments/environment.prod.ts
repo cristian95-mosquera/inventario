@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  MercanciaURL :'/mercancia',
+  MercanciaURL :'/mercancia/',
   UsuarioURL :'/usuario',
   CargoURL :'/cargo'
 };

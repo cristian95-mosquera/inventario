@@ -1,6 +1,6 @@
 package inventario.service;
 
-import inventario.dto.DtoCargo;
+import inventario.entity.Cargo;
 import inventario.repository.RepositoryCargo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,6 +9,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+
 class ServiceCargoTest {
 
     @Mock
@@ -16,6 +17,11 @@ class ServiceCargoTest {
 
     @InjectMocks
     private ServiceCargo serviceCargo;
+
+    public Cargo cargo;
+
+
+
 
     @BeforeEach
     public void setUp() {
@@ -33,6 +39,7 @@ class ServiceCargoTest {
 
     @Test
     void consultarId() {
+
     }
 
     @Test

@@ -30,7 +30,7 @@ export class GuardarCargoComponent implements OnInit {
     if(this.formularioCargo.valid){
       this.cargoService.crearCargo(this.formularioCargo.value).subscribe(
        ( )=> {
-        this.toastr.success('información', 'El cargo se creo exitosamente');
+        this.toastr.success('El cargo se creo exitosamente', 'información' );
        },
        (error:any)=> {
         this.toastr.error('Error', error?.mensaje); 

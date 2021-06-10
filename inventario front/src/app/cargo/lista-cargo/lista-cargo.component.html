@@ -1,3 +1,4 @@
+<br/>
 <table class="table container">
     <thead>
       <tr>
@@ -9,7 +10,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let cargo of cargos;">
-            <th scope="row">{{cargo.id}}</th>
+            <th scope="row">{{cargo.id}}</th> 
             <td>{{cargo.nombre}}</td>
             <td ><i class="fas fa-trash-alt text-danger" (click)="eliminarCargo(cargo.id)"></i></td>
         </tr>

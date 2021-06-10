@@ -17,7 +17,6 @@ public class ControllerCargo {
     @GetMapping
     public List<Cargo> listarCargo() {
         return serviceCargo.listar();
-
     }
 
     @GetMapping("/{id}")

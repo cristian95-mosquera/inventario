@@ -36,7 +36,7 @@ export class NuevoMercanciaComponent implements OnInit {
     if(this.formularioMercancia.valid){
       this.mercanciaService.guardarMercancia(this.formularioMercancia.value).subscribe(
        ( )=> {
-        this.toastr.success('información', 'Mercancia creada con exitosamente');
+        this.toastr.success('Mercancia creada con exitosamente','información');
        },
        (error:any)=> {
         this.toastr.error(error.error?.mensaje,'Error'); 

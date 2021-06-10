@@ -36,7 +36,7 @@ export class GuardarUsuarioComponent implements OnInit {
     if(this.formularioUsuario.valid){
       this.usuarioService.guardarUsuario(this.formularioUsuario.value).subscribe(
        ( )=> {
-        this.toastr.success('información', 'El usurario se creo exitosamente');
+        this.toastr.success('El usurario se creo exitosamente','información');
        },
        (error:any)=> {
         this.toastr.error(error.error?.mensaje,'Error'); 

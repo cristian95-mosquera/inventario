@@ -17,6 +17,10 @@ export class MercanciaService {
     return this.httpClient.get<Mercancia[]>(this.MercanciaURL );
   }
 
+  public consultarPorNombre(nombreProducto: string): Observable<any>{
+    return this.httpClient.get<any>(this.MercanciaURL + '/' + nombreProducto);
+  }
+
   public guardarMercancia(mercancia: Mercancia): Observable<any>{
     return this.httpClient.post<any>(this.MercanciaURL , mercancia);
   } 

@@ -1,1 +1,31 @@
-<p>editar-mercancia works!</p>
+<form class="table container" [formGroup]="editarMercancia" (ngSubmit)="actualizarMercancia()" #f="ngForm" > 
+    <br/>
+  <div class="col-12">
+      <label for="inputAddress" class="form-label">Nombre Producto</label>
+      <input type="text" class="form-control" id="nombreProducto" placeholder="ej: bobina" formControlName="nombreProducto">
+    </div>
+    <br/>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Cantidad</label>
+      <input type="text" class="form-control" id="cantidad" placeholder="debe ser un numero entero" formControlName="cantidad">
+    </div>
+    <br/>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">Fecha ingreso</label>
+      <input type="date" class="form-control" id="fechaIngreso" formControlName="fechaIngreso">
+    </div>
+    <br/>
+    <div class="col-12">
+        <label for="agenteRerporteCostos">Usuario</label>
+        <select formControlName="usuario" id="usuario" class="form-control">
+            <option disabled selected value="">Seleccione</option>
+            <option *ngFor="let usuario of usuarios" [value]="usuario.id">
+                {{ usuario.nombre }}
+            </option>
+        </select>
+      </div>
+      <br/>    
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+  </form>

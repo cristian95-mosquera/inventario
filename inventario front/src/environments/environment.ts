@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  MercanciaURL :'/mercancia',
+  MercanciaURL :'/mercancia/',
   UsuarioURL :'/usuario',
   CargoURL :'/cargo'
 
